@@ -1,0 +1,239 @@
+/* FONTS */
+
+/* lato-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/fonts/lato-v24-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* lato-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/lato-v24-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* lato-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/lato-v24-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* lato-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: url('/fonts/lato-v24-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+/* ROOT */
+:root {
+  --clr-bg: #262626;
+  --clr-succes: #0aaa5b;
+  --clr-error: #bb2b2a;
+
+  --clr-one: #E1A526;
+  --clr-two: #18a661;
+  --clr-three: #ba412b;
+
+}
+
+
+/* RESET */
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* MAIN CSS */
+
+body {
+  background-color: var(--clr-bg);
+  color: white;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0 auto;
+  width: 90%;
+
+  @media (max-width:500px) {
+    gap: 0.2rem;
+  }
+}
+
+h1 {
+  text-align: center;
+  color: var(--clr-one);
+  font-size: 4rem;
+  font-weight: 900;
+  margin-top: 2rem;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.header-text {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.status {
+  font-size: 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 2rem 8rem;
+
+  @media (max-width:500px) {
+    padding: 2rem 4rem;
+  }
+}
+
+.status p {
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+.languages {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 2rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.languages img {
+  width: 50px;
+
+  @media (max-width:500px) {
+    width: 40px;
+  }
+
+}
+
+.word {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.word > h2 {
+  background-color: #323232;
+  font-size: 3rem;
+  border-bottom: 2px solid white;
+  text-align: center;
+  padding: 0.5rem 1rem;
+
+  @media (max-width:500px){
+    font-size: 2rem;
+  }
+}
+
+.keyboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 900px;
+  margin:  0 auto;
+}
+
+.keyboard > button {
+  background-color: var(--clr-one);
+  font-size: 1.6rem;
+  width: 80px;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+
+  @media (max-width:500px) {
+    font-size: 1rem;
+    width: 50px;
+  }
+
+  &:hover {
+    transform: scale(105%);
+  }
+  
+}
+
+.keyboard > .right {
+  background-color: var(--clr-two);
+}
+
+.keyboard > .wrong {
+  background-color: var(--clr-three);
+}
+
+.btn-newgame {
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+
+  &:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px var(--clr-one);
+  }
+  &:active{
+    box-shadow: none;
+    transform: scale(1);
+  }
+}
